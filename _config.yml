@@ -1,0 +1,129 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Mufool
+subtitle: my blog
+description: #网站描述
+author: Mufool
+language: zh-Hans #网站使用的语言
+timezone: Asia/Shanghai #网站时区
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://mufool.com #网址，搜索时会在搜索引擎中显示
+root: / #网站根目录
+permalink: :year/:month/:day/:title/ #永久链接格式
+permalink_defaults:
+
+# Directory
+source_dir: source #资源文件夹，这个文件夹用来存放内容
+public_dir: public #公共文件夹，这个文件夹用于存放生成的站点文件
+tag_dir: tags #标签文件夹
+archive_dir: archives #归档文件夹
+category_dir: categories #分类文件夹
+code_dir: downloads/code #Include code 文件夹
+i18n_dir: :lang #国际化文件夹
+skip_render: #跳过指定文件的渲染，您可使用 glob 来配置路径
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post #默认布局
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0 #把文件名称转换为 (1) 小写或 (2) 大写
+render_drafts: false #显示草稿
+post_asset_folder: false #是否启动资源文件夹
+relative_link: false #把链接改为与根目录的相对位址
+future: true 
+highlight: #代码块的设置
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized #默认分类
+category_map: #分类别名
+tag_map:    #标签别名
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 15 #每页15篇文章 (0 = 关闭分页功能)
+pagination_dir: page #分页目录
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+# left image
+avatar: /images/default_avatar.jpg #侧边栏头像
+
+# =============================================================================
+# NexT Theme configuration
+# =============================================================================
+# 多说帐号
+duoshuo_shortname: mfool
+
+# DISQUS 帐号 （如果已经设置 多说 帐号，此选项将被跳过）
+disqus_shortname: your-disqus-shortname
+
+# JiaThis 分享服务
+jiathis: true
+
+# 多说 分享服务（必须启用多说）
+duoshuo_share:
+
+# 社交链接，将在侧栏中显示
+social:
+  GitHub: https://github.com/mufool/
+  #Twitter: your-twitter-url
+  Weibo: your-weibo-url
+  #DouBan: your-douban-url
+  ZhiHu: your-zhihu-url
+  # 等等
+
+
+# Creative Commons 4.0 International License.
+# http://creativecommons.org/
+# Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+creative_commons: by-nc-sa
+
+
+# Google 站长工具验证，请选择 `HTML Meta` 验证方式
+# See: https://www.google.com/webmasters/
+google_site_verification: 
+
+
+# Google 分析 ID
+google_analytics:
+
+
+# 百度统计 ID，此 ID 是百度统计提供脚本中 hm.js? 后面那串字符，非百度统计帐号
+baidu_analytics: a2b17a34748630d2b13839f4712009d1
+
+# 站点起始时间
+since: 2015
+
+# Swiftype Search Key
+swiftype_key: 
+
+# =============================================================================
+# End NexT Theme configuration
+# =============================================================================
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: git@github.com:mufool/mufool.github.io.git
+  branch: master
