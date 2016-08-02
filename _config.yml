@@ -72,7 +72,7 @@ avatar: /images/default_avatar.jpg #侧边栏头像
 # NexT Theme configuration
 # =============================================================================
 # 多说帐号
-duoshuo_shortname: mfool
+duoshuo_shortname: mufool
 
 # DISQUS 帐号 （如果已经设置 多说 帐号，此选项将被跳过）
 disqus_shortname: your-disqus-shortname
