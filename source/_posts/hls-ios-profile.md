@@ -1,5 +1,5 @@
 ---
-title: iOS上profile high 4:2:2无法播放
+title: iOS上hls无法播放问题
 date: 2016-08-01 18:09:53
 tags:
 ---

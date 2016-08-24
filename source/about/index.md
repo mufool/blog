@@ -28,11 +28,16 @@ comments: false
 
 ## 系统管理
 
-* [du、df统计的硬盘使用情况不一致问题](http://mufool.com/2016/07/13/df-du/)
-* [/var/log/clientmqueue爆满问题](http://mufool.com/2016/07/11/linux-clientmqueue/)
+* [Linux硬盘使用不一致问题](http://mufool.com/2016/07/13/df-du/)
+* [var目录爆满问题](http://mufool.com/2016/07/11/linux-clientmqueue/)
 
 ## 流媒体
 
 * [crtmpserver部署步骤](http://mufool.com/2016/07/13/rtmpd-deploy/)
 * [WOWZA流媒体直播配置](http://mufool.com/2015/09/22/wowza/)
+* [iOS上hls无法播放问题](http://mufool.com/2016/08/01/hls-ios-profile/)
+
+## 博客配置
+
+* [hexo博客颜色设置](http://mufool.com/2016/07/18/hexo-tips/)
 

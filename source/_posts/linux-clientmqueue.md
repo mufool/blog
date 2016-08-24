@@ -1,5 +1,5 @@
 ---
-title: /var/log/clientmqueue爆满问题
+title: var目录爆满问题
 date: 2016-07-11 17:08:37
 tags: [LINUX]
 ---

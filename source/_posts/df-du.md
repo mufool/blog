@@ -1,6 +1,6 @@
 ---
 layout: post
-title: du、df统计的硬盘使用情况不一致问题
+title: Linux硬盘使用不一致问题
 tags: [LINUX]
 ---
 
