@@ -33,7 +33,7 @@ comments: false
 
 ## 流媒体
 
-* [crtmpserver部署步骤](http://mufool.com/2016/07/13/rtmpd-deploy/)
+* [crtmpserver编译部署](http://mufool.com/2016/07/13/rtmpd-deploy/)
 * [WOWZA流媒体直播配置](http://mufool.com/2015/09/22/wowza/)
 * [iOS上hls无法播放问题](http://mufool.com/2016/08/01/hls-ios-profile/)
 
