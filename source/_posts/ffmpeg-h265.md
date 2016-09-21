@@ -58,9 +58,17 @@ No package 'x265' found
 ERROR: x265 not found
 ```
 
-cp x265.pc /usr/local/lib
+提示找不到x265的链接库文件x265.pc, 将编译目录下的x265.pc拷贝到/usr/local/lib下：
 
-然后修改/etc/profile中的环境变量PKG_CONFIG_PATH 
+```
+cp x265.pc /usr/local/lib
+```
+
+然后修改/etc/profile中的环境变量PKG_CONFIG_PATH:
+
+```
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/
+```
 
 查看是否已包含h265
 
@@ -68,7 +76,7 @@ cp x265.pc /usr/local/lib
 pkg-config --list-all | greo x265
 ```
 
-重新编译ffmpeg
+重新编译ffmpeg，还是出错：
 <img src="http://mufool.qiniudn.com/ffmpeg/h265-2.png" alt="">
 
 ```
