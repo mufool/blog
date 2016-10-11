@@ -30,6 +30,7 @@ comments: false
 
 * [Linux硬盘使用不一致问题](http://mufool.com/2016/07/13/df-du/)
 * [var目录爆满问题](http://mufool.com/2016/07/11/linux-clientmqueue/)
+* [DNS解析原理](http://mufool.com/2016/10/11/dns-parse/)
 
 ## 流媒体
 

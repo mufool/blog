@@ -8,6 +8,8 @@ tags: [FFMPEG]
 
 cmake要升级要2.8.8 yasm要升级到1.2.0
 
+<!-- more -->
+
 ## 安装x264
 
 ```

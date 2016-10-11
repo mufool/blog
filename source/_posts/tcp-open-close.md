@@ -6,12 +6,12 @@ tags: [TCP]
 
 ## TCP的状态图
 
+<!-- more -->
+
 [图片地址](http://www.tcpipguide.com/free/t_TCPOperationalOverviewandtheTCPFiniteStateMachineF-2.htm)
 
 <img src="http://mufool.qiniudn.com/tcp/tcpfsm.png" width="350" height="550" align="top" style="float:left;" alt="">
 <img src="http://mufool.qiniudn.com/tcp/tcpopenclose.jpg" width="350" height="520" style="margin-left:50px;" alt=""><br/><br/>
-
-<!-- more -->
 
 ## 建立连接协议（三次握手）
 

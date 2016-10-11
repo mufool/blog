@@ -6,6 +6,8 @@ tags:
 
 前段时间在一个直播项目中遇到一个直播流在pc，android均可以正常播放，但是在ios上无法播放的问题；检查过后发现并不是数据生成的异常导致的，最后怀疑可能是数据流本身的编解码参数有错误。通过ffmeg拉流解析发现，video的profile为h264 high 4:2:2，而ios设备目前并不支持profile高于high级别高于4.1的视频的解码。
 
+<!-- more -->
+
 > File format for the file segmenter can be a QuickTime movie, MPEG-4 video, or MP3 audio, using the specified encoding.
 >
 > Stream format for the stream segmenter must be MPEG elementary audio and video streams, wrapped in an MPEG-2 transport stream, and using the following encoding. The Audio Technologies and Video Technologies list supported compression formats.
