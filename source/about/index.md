@@ -8,13 +8,14 @@ comments: false
 ## 工具
 
 ### 命令行
-* [rsync简单介绍和使用](http://mufool.com/2016/07/11/rsync-use/)
+
 * [grep使用详解](http://mufool.com/2016/07/13/linux-grep/)
 * [top命令详解](http://mufool.com/2016/07/13/linux-top/)
 * [curl常用参数](http://mufool.com/2016/07/08/curl/)
 * [vim命令收集](http://mufool.com/2016/07/06/vim-cmd/)
 
 ### VIM
+
 * [VIM插件安装使用](http://mufool.com/2016/07/08/vim-install-and-use/)
 * [VIM标记](http://mufool.com/2016/07/11/vim-mark/)
 * [vim注释](http://mufool.com/2016/07/11/vim-commenter/)
@@ -23,14 +24,29 @@ comments: false
 * [vim插件cscope安装使用](http://mufool.com/2016/07/07/vim-cscope/)
 * [vim配置文件](http://mufool.com/2016/07/06/vim-vimrc/)
 
+### NGINX
+
+* [Nginx代理缓存配置详解](http://mufool.com/2016/10/28/nginx-proxy-cache/)
+* [Nginx location优先级](http://mufool.com/2016/10/28/nginx-location/)
+
 ### MYSQL
+
 * [MYSQL部分问题及解决方法](http://mufool.com/2016/07/11/mysql-tips/)
+* [MYSQl5.6主从同步配置]()
 
 ## 系统管理
 
+* [rsync简单介绍和使用](http://mufool.com/2016/07/11/rsync-use/)
 * [Linux硬盘使用不一致问题](http://mufool.com/2016/07/13/df-du/)
 * [var目录爆满问题](http://mufool.com/2016/07/11/linux-clientmqueue/)
 * [DNS解析原理](http://mufool.com/2016/10/11/dns-parse/)
+* [Linux多线程下载工具axel安装使用](http://mufool.com/2017/05/15/linux-axel/)
+* [Linux字符集查看修改](http://mufool.com/2017/05/15/linux-character/)
+* [Linux下su与su -命令的本质区别]()
+* [.bash_profile和.bashrc的什么区别及启动过程]()
+* [login shell与non-login shell的区别]()
+* [Linux自定义服务自启动脚本]()
+* [Samba使用]()
 
 ## 流媒体
 
@@ -39,7 +55,25 @@ comments: false
 * [iOS上hls无法播放问题](http://mufool.com/2016/08/01/hls-ios-profile/)
 * [编译支持h265的ffmpeg](http://mufool.com/2016/09/20/ffmpeg-h265/)
 
+## 大数据
+
+* [hadoop和spark部署]()
+* [hdfs基本操作]()
+* [hadoop使用zk配置HA]()
+* [spark几种运行方式]()
+* [rdd基本操作]()
+* [spark程序编译运行]()
+* [maven下载慢的解决方法]()
+* [spark on yarn提交慢解决方法]()
+* [zookeepr安装使用]()
+* [kafka安装使用]()
+* [flume安装配置]()
+
+## TCP/IP
+
+* [TCP开始结束及状态转换](http://mufool.com/2016/10/11/tcp-open-close/)
+* [IO多路复用]()
+
 ## 博客配置
 
 * [hexo博客颜色设置](http://mufool.com/2016/07/18/hexo-tips/)
-
