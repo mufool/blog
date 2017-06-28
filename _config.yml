@@ -72,10 +72,10 @@ avatar: /images/default_avatar.jpg #侧边栏头像
 # NexT Theme configuration
 # =============================================================================
 # 多说帐号
-duoshuo_shortname: mufool
+duoshuo_shortname:
 
 # DISQUS 帐号 （如果已经设置 多说 帐号，此选项将被跳过）
-disqus_shortname: your-disqus-shortname
+disqus_shortname: www-mufool-com
 
 # JiaThis 分享服务
 jiathis: true
@@ -115,7 +115,17 @@ baidu_analytics: a2b17a34748630d2b13839f4712009d1
 since: 2015
 
 # Swiftype Search Key
-swiftype_key: 
+swiftype_key:
+
+search_box:
+  on: true
+  type: google
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 # =============================================================================
 # End NexT Theme configuration

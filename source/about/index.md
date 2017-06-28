@@ -28,11 +28,16 @@ comments: false
 
 * [Nginx代理缓存配置详解](http://mufool.com/2016/10/28/nginx-proxy-cache/)
 * [Nginx location优先级](http://mufool.com/2016/10/28/nginx-location/)
+* [Nginx编译安装](http://mufool.com/2017/06/16/nginx-install/)
 
 ### MYSQL
 
 * [MYSQL部分问题及解决方法](http://mufool.com/2016/07/11/mysql-tips/)
-* [MYSQl5.6主从同步配置]()
+* [MYSQl安装及主从同步配置](http://mufool.com/2017/06/09/mysql-master-slave/)
+
+### REDIS
+
+* [Redis安装配置](http://mufool.com/2017/06/16/)
 
 ## 系统管理
 
@@ -42,11 +47,11 @@ comments: false
 * [DNS解析原理](http://mufool.com/2016/10/11/dns-parse/)
 * [Linux多线程下载工具axel安装使用](http://mufool.com/2017/05/15/linux-axel/)
 * [Linux字符集查看修改](http://mufool.com/2017/05/15/linux-character/)
-* [Linux下su与su -命令的本质区别]()
-* [.bash_profile和.bashrc的什么区别及启动过程]()
-* [login shell与non-login shell的区别]()
-* [Linux自定义服务自启动脚本]()
-* [Samba使用]()
+* [Linux下su与su -命令的区别](http://mufool.com/2017/06/09/linux-su/)
+* [.bash_profile和.bashrc的什么区别及启动过程](http://mufool.com/2017/06/09/linux-bashrc-profile/)
+* [login shell与non-login shell的区别](http://mufool.com/2017/06/09/linux-shell/)
+* [Linux自定义服务自启动脚本](http://mufool.com/2017/06/09/linux-initd/)
+* [Samba使用](http://mufool.com/2017/06/09/linux-samba/)
 
 ## 流媒体
 
@@ -57,22 +62,22 @@ comments: false
 
 ## 大数据
 
-* [hadoop和spark部署]()
-* [hdfs基本操作]()
-* [hadoop使用zk配置HA]()
-* [spark几种运行方式]()
-* [rdd基本操作]()
-* [spark程序编译运行]()
-* [maven下载慢的解决方法]()
-* [spark on yarn提交慢解决方法]()
-* [zookeepr安装使用]()
-* [kafka安装使用]()
-* [flume安装配置]()
+* [hadoop和spark部署](http://mufool.com/2017/06/09/hadoop-spark-install/)
+* [hdfs基本操作](http://mufool.com/2017/06/09/hadoop-hdfs/)
+* [hadoop使用zk配置HA](http://mufool.com/2017/06/09/hadoop-zk-ha/)
+* [spark几种运行方式](http://mufool.com/2017/06/09/hadoop-spark-run/)
+* [rdd基本操作](http://mufool.com/2017/06/09/hadoop-spark-rdd/)
+* [spark程序编译运行](http://mufool.com/2017/06/09/hadoop-spark-mvn-sbt/)
+* [maven下载慢的解决方法](http://mufool.com/2017/06/09/hadoop-mvn-slow/)
+* [spark on yarn提交慢解决方法](mufool.com/2017/06/09/hadoop-spark-yarn/)
+* [zookeepr安装使用](http://mufool.com/2017/06/09/hadoop-zookeepr/)
+* [kafka安装使用](http://mufool.com/2017/06/09/hadoop-kafka/)
+* [flume安装配置](http://mufool.com/2017/06/09/hadoop-flume/)
 
 ## TCP/IP
 
 * [TCP开始结束及状态转换](http://mufool.com/2016/10/11/tcp-open-close/)
-* [IO多路复用]()
+* [IO多路复用](http://mufool.com/2017/06/09/io-multi-reuse/)
 
 ## 博客配置
 

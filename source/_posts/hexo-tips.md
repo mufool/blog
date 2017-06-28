@@ -8,7 +8,7 @@ hexo博客的颜色由css控制，具体文件是由位于目录hexoblog/public/
 
 <!-- more -->
 
-```
+```stylus
 /*头部的背景颜色设置*、
 2134 .header {
 2135   background: #d1fab8;
@@ -28,7 +28,7 @@ hexo博客的颜色由css控制，具体文件是由位于目录hexoblog/public/
 
 修改文件themes/next/source/css/_variables/base.styl以下两处，增加header-bgex 和body-bgex两个颜色定义，一个是头部和脚部的颜色值定义，一个是主题部分颜色值定义。同时主题颜色的更改在48行修改body-bg-colo的值即可。
 
-```
+```stylus
 11 $header-bgex  = #d1fab8
 12 $body-bgex    = #e0fccf
 13 $whitesmoke   = #f5f5f5
@@ -45,12 +45,13 @@ hexo博客的颜色由css控制，具体文件是由位于目录hexoblog/public/
 
 修改themes/next/source/css/_schemes/Mist/sidebar/_header.styl文件中头部的背景色为base.styl定义的背景色
 
-```
+```stylus
 3 .header { background: $header-bgex; }
 ```
 
 修改themes/next/source/css/_schemes/Mist/index.styl中footer相关定义，可以修改footer颜色值
-```
+
+```stylus
  72 // Footer
  73 // --------------------------------------------------
  74 .footer {

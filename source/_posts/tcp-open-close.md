@@ -1,7 +1,8 @@
 ---
 layout: post
 title: TCP开始结束及状态转换
-tags: [TCP]
+date: 2016-10-11 17:08:37
+tags: [TCP/IP]
 ---
 
 ## TCP的状态图

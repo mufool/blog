@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 编译支持h265的ffmpeg
+date: 2016-09-20 15:01:31
 tags: [FFMPEG]
 ---
 
@@ -12,7 +13,7 @@ cmake要升级要2.8.8 yasm要升级到1.2.0
 
 ## 安装x264
 
-```
+{% codeblock %}
 git clone git://git.videolan.org/x264.git
 cd x264
 ./configure --enable-static --disable-opencl --disable-avs
@@ -21,19 +22,19 @@ cd x264
 make
 sudo make install
 sudo ldconfig
-```
+{% endcodeblock %}
 
 ## 安装x265
 
-```
-hg clone https://bitbucket.org/multicoreware/x265
-hg checkout 0.8
-cd x265/build/linux
-./make-Makefiles.bash
-# 这里将 LOG_CU_STATISTICS　设置为ON，然后，按下“c”，实现configure，按下“q”退出
-make
-sudo make install
-sudo ldconfig
+```bash
+	hg clone https://bitbucket.org/multicoreware/x265
+	hg checkout 0.8
+	cd x265/build/linux
+	./make-Makefiles.bash
+	# 这里将 LOG_CU_STATISTICS　设置为ON，然后，按下“c”，实现configure，按下“q”退出
+	make
+	sudo make install
+	sudo ldconfig
 ```
 
 ## 编译ffmpeg

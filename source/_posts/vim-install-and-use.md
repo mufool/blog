@@ -1,6 +1,7 @@
 ---
 layout: post
 title: VIM插件安装使用
+date: 2016-07-08 12:51:40
 tags: [VIM]
 ---
 

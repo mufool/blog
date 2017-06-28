@@ -3,6 +3,7 @@ layout: post
 title: vim命令收集
 date: 2016-07-06 20:08:17
 tags: [VIM]
+categories: vim
 ---
 
 ## 光标控制命令

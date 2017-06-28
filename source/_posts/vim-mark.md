@@ -1,6 +1,7 @@
 ---
 layout: post
 title: VIM标记
+date: 2016-07-11 12:51:40
 tags: [VIM]
 ---
 
