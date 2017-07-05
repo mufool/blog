@@ -60,7 +60,7 @@ comments: false
 * [iOS上hls无法播放问题](http://mufool.com/2016/08/01/hls-ios-profile/)
 * [编译支持h265的ffmpeg](http://mufool.com/2016/09/20/ffmpeg-h265/)
 
-## 大数据
+## 大数据基础工具
 
 * [hadoop和spark部署](http://mufool.com/2017/06/09/hadoop-spark-install/)
 * [hdfs基本操作](http://mufool.com/2017/06/09/hadoop-hdfs/)
@@ -73,6 +73,11 @@ comments: false
 * [zookeepr安装使用](http://mufool.com/2017/06/09/hadoop-zookeepr/)
 * [kafka安装使用](http://mufool.com/2017/06/09/hadoop-kafka/)
 * [flume安装配置](http://mufool.com/2017/06/09/hadoop-flume/)
+
+## SPARK
+
+* [Spark序列化](http://mufool.com/2017/07/03/spark-serialization/)
+* [Spark中redis连接池的几种使用方法](http://mufool.com/2017/07/04/spark-redis/)
 
 ## TCP/IP
 

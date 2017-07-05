@@ -8,6 +8,8 @@ tags: [HADOOP]
 
 &emsp;&emsp;在hadoop1时代，只有一个NameNode。如果该NameNode数据丢失或者不能工作，那么整个集群就不能恢复了。hadoop2.2.0中HDFS的高可靠指的是可以同时启动2个NameNode。其中一个处于工作状态(active)，另一个处于随时待命状态(standby)。这样，当一个NameNode所在的服务器宕机时，可以在数据不丢失的情况下，手工或者自动切换到另一个NameNode提供服务。
 
+<!-- more -->
+
 &emsp;&emsp;hadoop2.0的HA机制官方介绍了有2种方式，一种是NFS（Network File System）方式，另外一种是QJM（Quorum Journal Manager）方式。active namenode和standby namenode之间通过NFS或者JN（journalnode，QJM方式）来同步数据。
 
 &emsp;&emsp;active namenode会把最近的操作记录写到本地的一个edits文件中（edits file），并传输到NFS或者JN中。standby namenode定期的检查，从NFS或者JN把最近的edit文件读过来，然后把edits文件和fsimage/tech文件合并成一个新的fsimage/tech，合并完成之后会通知active namenode获取这个新fsimage/tech。active namenode获得这个新的fsimage/tech文件之后，替换原来旧的fsimage/tech文件。所以启动了hadoop2.0的HA机制之后，hadoop1.0中的secondarynamenode，checkpointnode，buckcupnode这些都不需要了。
