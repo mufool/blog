@@ -87,11 +87,11 @@ javaRDD.foreach(new VoidFunction<String>() {
 Worker上的输出：
 
 ```bash
-	2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@6bc8c6df
-	2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@46c2ca89
-	2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@ac221bf
-	2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@1bccc548
-	2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@25c1ef20
+2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@6bc8c6df
+2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@46c2ca89
+2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@ac221bf
+2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@1bccc548
+2017-07-04 12:59:18 DEBUG: redis.clients.jedis.JedisPool@25c1ef20
 ```
 
 &emsp;&emsp;按分区历所有元素，TestRedisPool不需要实现序列化；每一个RDD中的元素都需要创建很多的redis连接池，即便使用短连接也会对redis造成很大的压力。效率也是极其低下的。
@@ -158,11 +158,11 @@ javaRDD.foreachPartition(new VoidFunction<Iterator<String>>() {
 Worker上的输出
 
 ```bash
-	2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@21545755
-	2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@111b1ab4
-	2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@2b9b3bd5
-	2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@21545755
-	2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@111b1ab4
+2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@21545755
+2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@111b1ab4
+2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@2b9b3bd5
+2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@21545755
+2017-07-04 13:30:29 DEBUG: redis.clients.jedis.JedisPool@111b1ab4
 ```
 
 &emsp;&emsp;TestRedisPool不需要实现序列化，每个分区只需要创建一个redis连接池，正常情况下会创建和线程数一样多的连成池，这种情况下，redis连接池数量明显减少。
@@ -213,14 +213,14 @@ javaRDD.foreachPartition(new VoidFunction<Iterator<String>>() {
 Worker输出
 
 ```bash
-	2017-07-04 16:38:04 DEBUG: init:redis.clients.jedis.JedisPool@416605b2
-	2017-07-04 16:38:04 DEBUG: init:redis.clients.jedis.JedisPool@416605b2
-	2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
-	2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
-	2017-07-04 16:38:04 DEBUG: init:redis.clients.jedis.JedisPool@416605b2
-	2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
-	2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
-	2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
+2017-07-04 16:38:04 DEBUG: init:redis.clients.jedis.JedisPool@416605b2
+2017-07-04 16:38:04 DEBUG: init:redis.clients.jedis.JedisPool@416605b2
+2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
+2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
+2017-07-04 16:38:04 DEBUG: init:redis.clients.jedis.JedisPool@416605b2
+2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
+2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
+2017-07-04 16:38:04 DEBUG: redis.clients.jedis.JedisPool@416605b2
 ```
 
 &emsp;&emsp;TestRedisPool也不需要序列化。因为本实验环境中只有一个worker节点，所以这里看到始终只有一个redis连接池实例。这种情况下是在分区上分别创建实例，分区对应的就是虚拟线程的个数，所以相当于3个线程同时去获取jedispool实现，所以一共init了三次。如果做成单例模式就能解决init多次的问题。
@@ -286,17 +286,17 @@ javaRDD.foreachPartition(new VoidFunction<Iterator<String>>() {
 节点上输出如下：
 
 ```bash
-	2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@4ac996de
-	2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@7f6973f9
-	2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@1e24e8f6
-	2017-07-04 17:13:48 DEBUG: init:redis.clients.jedis.JedisPool@68caaac
-	2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
-	2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
-	2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
-	2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@7f6973f9
-	2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
-	2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@1e24e8f6
-	2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
+2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@4ac996de
+2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@7f6973f9
+2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@1e24e8f6
+2017-07-04 17:13:48 DEBUG: init:redis.clients.jedis.JedisPool@68caaac
+2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
+2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
+2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
+2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@7f6973f9
+2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
+2017-07-04 17:13:48 DEBUG: class:test.TestRedisPool@1e24e8f6
+2017-07-04 17:13:48 DEBUG: pool:redis.clients.jedis.JedisPool@68caaac
 ```
 
 &emsp;&emsp;可以看到现在jedispool只init了一次，并且全局也只有一个jedispool。但是现在TestRedisPool对象还是被创建了多个，改为在Master上定义，并已广播变量的形式分发到Worker上可以解决这个问题，这种情况下TestRedisPool需要序列化。
@@ -322,17 +322,17 @@ javaRDD.foreachPartition(new VoidFunction<Iterator<String>>() {
 输出如下，类实例和redispool都只创建一次，也使用同一个。
 
 ```bash
-	2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
-	2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
-	2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
-	2017-07-04 17:17:32 DEBUG: init:redis.clients.jedis.JedisPool@3a820c05
-	2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
-	2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
-	2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
-	2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
-	2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
-	2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
-	2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
+2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
+2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
+2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
+2017-07-04 17:17:32 DEBUG: init:redis.clients.jedis.JedisPool@3a820c05
+2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
+2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
+2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
+2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
+2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
+2017-07-04 17:17:32 DEBUG: class:test.TestRedisPool@62044018
+2017-07-04 17:17:32 DEBUG: pool:redis.clients.jedis.JedisPool@3a820c05
 ```
 
 &emsp;&emsp;现在是TestRedisPool在Master上定义，广播到各个Worker上；同时jedispool在每台worker上也始终只会有一个实例存在。但是也会有人会疑问，为什么jedispool现在没有序列化的问题（方法三），或者定义成静态导致worker上获取不到jedispool（方法五第一种情况）的问题。这是因为，方法三中jedispool为普通类型是，和类一起序列化，因为其本身不支持序列化，所以报错；方法五中，定义成静态类型之后，静态类型不属于类，所以TestRedisPool序列化不会出错，但是因为jedispool在Master上定义和初始化，不会传输到节点上，节点上获取到的jedispool都为null，所以报错。而方法七中使用懒启动的方式，在使用的是才会初始化jedispool，所以实际是在节点上完成的初始化，所以不会有问题。
