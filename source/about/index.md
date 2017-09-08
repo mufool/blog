@@ -51,7 +51,7 @@ comments: false
 * [.bash_profile和.bashrc的什么区别及启动过程](http://mufool.com/2017/06/09/linux-bashrc-profile/)
 * [login shell与non-login shell的区别](http://mufool.com/2017/06/09/linux-shell/)
 * [Linux自定义服务自启动脚本](http://mufool.com/2017/06/09/linux-initd/)
-* [Samba使用](http://mufool.com/2017/06/09/linux-samba/)
+* [Samba简单使用](http://mufool.com/2017/06/09/linux-samba/)
 
 ## 流媒体
 
@@ -76,14 +76,31 @@ comments: false
 
 ## SPARK
 
+* [Spark工作机制](http://mufool.com/2017/07/05/spark-mechanism/)
 * [Spark序列化](http://mufool.com/2017/07/03/spark-serialization/)
 * [Spark中redis连接池的几种使用方法](http://mufool.com/2017/07/04/spark-redis/)
+* [Spark或Hadoop集群无法停止](http://mufool.com/2017/07/06/spark-no-stop/)
+
+## JAVA
+
+* [log4j2使用](http://mufool.com/2017/07/06/log4j2/)
+* [Java操作redis](http://mufool.com/2017/08/25/java-redis/)
+
+## 数据结构和算法
+
+* [几种基本排序算法](http://mufool.com/2017/08/25/sort/)
 
 ## TCP/IP
 
 * [TCP开始结束及状态转换](http://mufool.com/2016/10/11/tcp-open-close/)
 * [IO多路复用](http://mufool.com/2017/06/09/io-multi-reuse/)
 
-## 博客配置
+## P2P/CDN
 
+* [p2p之NAT详解](http://mufool.com/2017/08/21/p2p-nat/)
+
+## WEB前端
+
+* [Centos下安装Grunt](http://mufool.com/2017/08/21/centos-grunt/)
 * [hexo博客颜色设置](http://mufool.com/2016/07/18/hexo-tips/)
+* [Cookie和Session原理](http://mufool.com/2017/08/25/cookie-session/)
