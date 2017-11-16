@@ -85,11 +85,21 @@ comments: false
 * [Spark序列化](http://mufool.com/2017/07/03/spark-serialization/)
 * [Spark中redis连接池的几种使用方法](http://mufool.com/2017/07/04/spark-redis/)
 * [Spark或Hadoop集群无法停止](http://mufool.com/2017/07/06/spark-no-stop/)
+* [Zeppelin中文文档](http://mufool.com/2017/11/16/zeppelin/)
+
+## C/C++
+
+* [Centos升级gcc版本](http://mufool.com/2017/11/16/gcc-update/)
 
 ## JAVA
 
 * [Log4j2使用](http://mufool.com/2017/07/06/log4j2/)
 * [Java操作redis](http://mufool.com/2017/08/25/java-redis/)
+
+## PYTHON
+
+* [Centos升级python2.7](http://mufool.com/2017/11/16/python-update-2-7/)
+* [Python使用国内源下载](http://mufool.com/2017/11/16/python-mirrors/)
 
 ## 数据结构和算法
 
