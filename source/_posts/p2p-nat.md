@@ -1,6 +1,6 @@
 ---
 layout: post
-title: p2p之NAT详解
+title: P2P之NAT详解
 date: 2017-08-21 11:39:53
 tags: [P2P]
 ---

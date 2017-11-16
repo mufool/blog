@@ -307,13 +307,7 @@ sbin/hadoop-daemon.sh start namenode
 sbin/hadoop-daemons.sh start datanode
 ```
 
-启动ZKFC，在master上执行如下命令，完成ZKFC的启动
-
-```bash
-sbin/hadoop-daemons.sh start zkfc
-```
-
-也可以单独没台上分别执行：
+启动ZKFC，在master上分别执行如下命令，完成主备切换进程ZKFC的启动
 
 ```bash
 sbin/hadoop-daemon.sh start zkfc
@@ -365,6 +359,19 @@ sbin/hadoop-daemon.sh stop namenode
 
 ![image](/images/tech/hadoop-zk-ha-5.jpg)
 
+## 故障切换
+
+将namenode1设为active，使用命令行工具进行状态切换
+```
+bin/hdfs  haadmin -failover --forcefence --forceactive  nn2  nn1
+```
+查看状态
+```
+bin/hdfs  haadmin -getServiceState  nn1
+```
+
 参考：
 [HadoopHA简述](http://www.lishiyu.cn/post/68.html)
 [Hadoop2.5.2 HA高可靠性集群搭建(Hadoop+Zookeeper)](http://eksliang.iteye.com/blog/2226986)
+[HDFS 和 YARN 的 HA 故障切换](http://blog.csdn.net/u011414200/article/details/50336735)
+[Hadoop-2.8.0分布式安装手册](http://www.voidcn.com/article/p-ercyscwq-oe.html)

@@ -1,11 +1,13 @@
 ---
-title: hexo添加disqus评论
+title: Hexo添加disqus评论
 date: 2017-06-19 12:42:28
 tags: [hexo]
 ---
 ## 注册disqus
 
 disqus[官网](https://disqus.com)，按要求注册一个账户，添加你的博客地址
+
+<!-- more -->
 
 ## 获取shortname
 

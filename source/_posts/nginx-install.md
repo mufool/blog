@@ -1,6 +1,6 @@
 ---
 layout: post
-title: nginx编译安装
+title: Nginx编译安装
 date: 2017-06-16 19:48:32
 tags: [NGINX]
 ---

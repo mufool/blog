@@ -1,5 +1,5 @@
 ---
-title: hexo博客颜色设置
+title: Hexo博客颜色设置
 date: 2016-07-18 16:13:40
 tags: [hexo]
 ---
