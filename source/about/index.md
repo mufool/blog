@@ -38,6 +38,7 @@ comments: false
 
 * [MYSQL部分问题及解决方法](http://mufool.com/2016/07/11/mysql-tips/)
 * [MYSQl安装及主从同步配置](http://mufool.com/2017/06/09/mysql-master-slave/)
+* [Mysql单表大数据导出导入](http://mufool.com/2017/11/30/mysql-table-import-export/)
 
 ### REDIS
 
@@ -64,6 +65,7 @@ comments: false
 * [WOWZA流媒体直播配置](http://mufool.com/2015/09/22/wowza/)
 * [iOS上hls无法播放问题](http://mufool.com/2016/08/01/hls-ios-profile/)
 * [编译支持h265的ffmpeg](http://mufool.com/2016/09/20/ffmpeg-h265/)
+* [RTMP协议](http://mufool.com/2017/11/30/rtmp/)
 
 ## 大数据基础工具
 
@@ -86,6 +88,10 @@ comments: false
 * [Spark中redis连接池的几种使用方法](http://mufool.com/2017/07/04/spark-redis/)
 * [Spark或Hadoop集群无法停止](http://mufool.com/2017/07/06/spark-no-stop/)
 * [Zeppelin中文文档](http://mufool.com/2017/11/16/zeppelin/)
+
+## 机器学习
+
+* [FM原理和使用](http://mufool.com/2017/11/20/fm/)
 
 ## C/C++
 
@@ -121,3 +127,4 @@ comments: false
 * [Cookie和Session原理](http://mufool.com/2017/08/25/cookie-session/)
 * [Hexo博客环境搭建](http://mufool.com/2017/09/13/hexo-blog/)
 * [Grunt打包前端代码](http://mufool.com/2017/09/22/grunt-package/)
+* [HTTP/2.0入门](http://mufool.com/2017/11/30/http2-0/)
