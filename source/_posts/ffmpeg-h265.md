@@ -45,7 +45,7 @@ make
 ```
 
 出错：
-<img src="http://mufool.qiniudn.com/ffmpeg/h265-1.png" alt="">
+<img src="http://pic-blog.bfvyun.com/ffmpeg/h265-1.png" alt="">
 
 查看config.log
 
@@ -80,7 +80,7 @@ pkg-config --list-all | greo x265
 ```
 
 重新编译ffmpeg，还是出错：
-<img src="http://mufool.qiniudn.com/ffmpeg/h265-2.png" alt="">
+<img src="http://pic-blog.bfvyun.com/ffmpeg/h265-2.png" alt="">
 
 ```
 #ls  /usr/local/lib | grep libx264
@@ -92,7 +92,7 @@ libx264.so.146
 可能原先我做过编译，在/usr/local目录下面安装了x264，可能有冲突，把x264在/usr/local目录下的一些相关文件卸载掉，重新编译x264，再编译ffmpeg
 
 运行ffmpeg，已包含x265
-<img src="http://mufool.qiniudn.com/ffmpeg/h265-3.png" alt="">
+<img src="http://pic-blog.bfvyun.com/ffmpeg/h265-3.png" alt="">
 
  
 接下来转码一个h.265视频到h.264看看效果。

@@ -45,6 +45,10 @@ comments: false
 * [Redis安装配置](http://mufool.com/2017/06/16/redis-install)
 * [Centos安装redis集群](http://mufool.com/2017/10/17/redis-cluster)
 
+## 插件
+
+[Vimium使用](http://mufool.com/2019/09/29/chrome-plugin-vimium/)
+
 ## 系统管理
 
 * [Rsync简单介绍和使用](http://mufool.com/2016/07/11/rsync-use/)

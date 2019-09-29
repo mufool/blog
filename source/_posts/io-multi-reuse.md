@@ -33,7 +33,7 @@ tags: [TCP/IP]
 
 ### 同步阻塞形式
 效率是最低的。例子，排队时你专心排队，什么别的事都不做。 实际程序中，就是未对fd 设置O_NONBLOCK 标志位的read/write 操作。
-![imag](http://mufool.qiniudn.com/iomulti/io-multi1.jpg)
+![imag](http://pic-blog.bfvyun.com/iomulti/io-multi1.jpg)
 
 ### 异步阻塞形式
 排队时，等着被叫号，什么其他的时也干不了。异步操作可以被阻塞，比如说提前在前面有人在处理时先叫到你的号。 比如select 函数，假如传入的最后一个timeout 参数为NULL,那么如果所关注的事件没有一个被触发，程序就会一直阻塞在这个select 调用处。 
@@ -41,7 +41,7 @@ tags: [TCP/IP]
 ### 同步非阻塞形式
 排队时，可以打电话，一直需要看有没有排到自己。任务间来回切换，即轮询（polling）的方式，效率也比较低。read/write 操作，可以对fd设置O_NONBLOCK 标志位,这样就可以将同步操作变成非阻塞的了。 
 
-![imag](http://mufool.qiniudn.com/iomulti/io-multi2.jpg)
+![imag](http://pic-blog.bfvyun.com/iomulti/io-multi2.jpg)
 
 同步非阻塞方式相比同步阻塞方式：
 优点是能够在等待任务完成的时间里干其他活了（包括提交其他任务，也就是可以有多个任务在同时执行）。
@@ -49,11 +49,11 @@ tags: [TCP/IP]
 
 ### 异步非阻塞形式
 排队时，专心打电话，排到时有人会通知到。
-![imag](http://mufool.qiniudn.com/iomulti/io-multi3.jpg)
+![imag](http://pic-blog.bfvyun.com/iomulti/io-multi3.jpg)
 
 ## I/O多路复用
 所谓的I/O复用，就是多个I/O可以复用一个进程。
-![imag](http://mufool.qiniudn.com/iomulti/io-multi4.jpg)
+![imag](http://pic-blog.bfvyun.com/iomulti/io-multi4.jpg)
 
 早期的IO多路复用采用非阻塞的模式，当一个连接过来时，我们不阻塞住，这样一个进程可以同时处理多个连接了。但是进程需要一直轮训所有连接是否有事件需要处理，这样效率十分低下。
 后来出现了select、poll，其原理是引入了一个代理，由代理去观察所有的连接，当有算时间触发时由代理通知进程处理，但是进程还是需要去找具体哪个连接有时间处理。select和poll减少了进程轮训所有连接的次数，节省了cpu时间。select和poll的区别是select只能观察1024个连接，poll可以观察无限个连接。

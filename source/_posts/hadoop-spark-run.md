@@ -72,12 +72,12 @@ Driver在任务提交机上执行，适用于交互和调试，也就是希望�
 
 [图片来自网络](https://www.slideshare.net/Hadoop_Summit/sparkonyarn-empower-spark-applications-on-hadoop-cluster)
 
-![spark-client](http://mufool.qiniudn.com/spark/yarn-client.jpg)
+![spark-client](http://pic-blog.bfvyun.com/spark/yarn-client.jpg)
 
 ### cluster模式
 Driver运行在ApplicationMaster中，应用在生产过程中。Driver以及资源申请都在AppMaster执行，负责向YARN申请资源，并监督作业的运行状况。当用户提交完作业之后，就关闭client，作业会继续在YARN上。
 
-![spark-cluster](http://mufool.qiniudn.com/spark/yarn-cluster.jpg)
+![spark-cluster](http://pic-blog.bfvyun.com/spark/yarn-cluster.jpg)
 
 参考：
 [谈谈Spark运行模式](https://www.zybuluo.com/sasaki/note/252413)

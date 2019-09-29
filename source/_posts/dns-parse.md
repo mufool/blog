@@ -13,7 +13,7 @@ DNS（Domain Name System，域名系统），互联网上域名和IP地址相互
 
 ## 域名系统结构
 
-<img src="http://mufool.qiniudn.com/dns/structure.jpg" alt="">
+<img src="http://pic-blog.bfvyun.com/dns/structure.jpg" alt="">
 
 1. 根域名服务器：根域名服务器是最高层次的域名服务器，也是最重要的域名服务器。所有的根域名服务器都知道所有的顶级域名服务器的域名和IP地址。
 2. 顶级域名服务器： 这些域名服务器负责管理在该顶级域名服务器注册的所有二级域名。当收到DNS查询请求时，就给出相应的回答(可能是最后的结果，也可能是下一步应当找的域名服务器的IP地址)。
@@ -37,7 +37,7 @@ CNAME 记录：通常称别名指向。目标主机地址只能使用主机名�
 
 [图片地址](http://www.tcpipguide.com/free/t_DNSNameResolutionProcess-2.htm)
 
-<img src="http://mufool.qiniudn.com/dns/dnsresolution.png" alt="">
+<img src="http://pic-blog.bfvyun.com/dns/dnsresolution.png" alt="">
 
 1. 浏览器中输入“www.net.compsci.googleplex.edu”，发出解析请求。
 2. 本机的域名解析器( resolver程序)查询本地缓存和host文件中是否为域名的映射关系，如果有则调用这个IP地址映射，完成解析。

@@ -26,13 +26,13 @@ tags: [RTMP]
 
 1、 基本命令
 C0 和S0：分别是1 个byte 的数据块，它主要是为了指明RTMP 的版本。对于Client 来说代表了客户端请求使用的版本，而对Server 来说，表明了服务端选择使用的版本。现在所使用的版本号都是0x03,0-2是早期产品所用的，已被丢弃；4-31保留在未来使用 ；32-255不允许使用。如果Client 请求了一个非法的版本号，那么Server 应该返回版本号0x03。Client 要么同意Server 的选择，要么放弃握手。
-![image](http://mufool.qiniudn.com/rtmp/c0s0.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/c0s0.jpg)
 
 C1 和S1 ：分别是一个1536 bytes 长的数据块。这个数据块的前4 个bytes 指明了这个数据块创建的当前时间戳，也可以是0。后面4 个bytes 通常是0，也可以是版本号，对于Client来说是FP 的版本号，对于Server 来说是FMS 的版本号。随后的1528 个bytes 的值是任意填写的。
-![image](http://mufool.qiniudn.com/rtmp/c1s1.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/c1s1.jpg)
 
 C2 和S2 ：也分别是一个1536 bytes 长的数据块。所不同的是，对于C2 来说，time 和time2的值必须是从S1 中读取的；反过来对S2 也一样，是从C1 中读取的。另一方面剩下的1528个bytes 也不再是随机值了，对于C2 来说这些bytes 必须来自S1，反过来对S2 也一样，这些bytes 必须来自C1。总结下来就是说，C2 要把之前S1 的1536 bytes 内容完完整整的发回给Server，S2 也做类似的动作，把之前收到的C1 的内容完整的发回给Client。
-![image](http://mufool.qiniudn.com/rtmp/c2s2.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/c2s2.jpg)
 
 2、握手流程
 - 首先由Client 发送C0、C1 给Server，并且等待S1 的到来。
@@ -51,20 +51,20 @@ RTMP协议中消息在网络上传输时被拆分成消息块（chunk）。Messa
 每个Chunk 都会分配一个Chunk Stream ID。
 
 1、Chunk格式
-![image](http://mufool.qiniudn.com/rtmp/chunk.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/chunk.jpg)
 
 2、Chunk Basic Header
 Basic Header 包含fmt 和cs id 两个字段，fmt 表示协议头格式（Chunk Message HeaderFormat），cs id 表示流id（Chunk Stream ID）。Basic Header 长度为1-3 个字节，由cs id 字段来决定。
 Fmt，决定了Chunk Message Header 的格式，取值为0-3，共四种格式。
 Cs id，取值范围是0 – 65599，0-2 为保留值。0 表示basic header 长度为2 个字节，1 表示长度为3 个字节，2 表示该chunk 为控制消息（同时Message Stream ID必须是0）。
 * 当Basic Header 长度为1 时，cs id 取值2-63。
-![image](http://mufool.qiniudn.com/rtmp/bh1.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/bh1.jpg)
 
 * 当Basic Header 长度为2时，cs id = 64 + the second byte。
-![image](http://mufool.qiniudn.com/rtmp/bh2.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/bh2.jpg)
 
 * 当Basic Header 长度为3 时，cs id = 64 + the second byte + the third byte × 256。
-![image](http://mufool.qiniudn.com/rtmp/bh3.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/bh3.jpg)
 
 解析csid示例代码：
 ```cpp
@@ -82,7 +82,7 @@ else if(nChannel == 1)
 3、Chunk Message Header
 Fmt 取值从0-3，决定了四种长度的chunk msg header，可取值为11B、7B、3B、0B。
 - type0（fmt=0）
-![image](http://mufool.qiniudn.com/rtmp/cmh0.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/cmh0.jpg)
 
 * Timestamp，时间戳，最大值为0xffffff，当超过这个值时启用时间戳扩展字段（最大4 个字节）。当时间戳扩展启用时，这个值必须填0xffffff。
 * Message length，并非trunk 的长度，而是指一条音视频帧或者控制消息的长度。
@@ -90,11 +90,11 @@ Fmt 取值从0-3，决定了四种长度的chunk msg header，可取值为11B、
 * Msg streamid，Chunk 中的message stream id 为小端字节序，这是adobe 特别强调的。
 每个Chunk Stream 开始的第一个Chunk 必须是Type 0 格式的，即使整个Chunk Stream只有一个Chunk。timestamp 表示Chunk 中的msg 的绝对时间值，每条Chunk Stream 的第一个Chunk 的timestamp 都是0。实战中我们发现type0 格式的chunk 非常少。
 - type1（fmt=1）
-![image](http://mufool.qiniudn.com/rtmp/cmh1.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/cmh1.jpg)
 type1的trunk 和上一个trunk 拥有相同的message stream id。且Timestamp delta 表示相对上一个trunk 的时间差，实战中大多数音视频数据都采用相对时间戳。
 
 - type2（fmt=2）
-![image](http://mufool.qiniudn.com/rtmp/cmh2.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/cmh2.jpg)
 type 2 的trunk 和上一个trunk 拥有相同的长度、消息类型、消息流id。
 
 - type3（fmt=3）
@@ -156,19 +156,19 @@ switch (nPacketType)
 ## 控制消息
 控制消息是作为rtmp trunk stream 的负载存在的。当Message type id 取值为0-7 时，表示控制消息。同时Chunk Basic Header 的Chunk Stream ID 必须为2，Chunk Msg Header 的Message Stream ID 必须为0。其中消息7一般不用。
 1、 0x01 – Set Chunk Size
-![image](http://mufool.qiniudn.com/rtmp/scz.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/scz.jpg)
 这个消息是双向发送的，一方告诉另一方自己的trunk 大小。一旦设置成功则后续所有trunk 大小会一直保持这个值。设置之前是128。
 
 2、 0x02 – About Message
-![image](http://mufool.qiniudn.com/rtmp/am.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/am.jpg)
 用来通知正在等待接收指定的Chunk Stream 的对端，放弃等待，并且放弃处理AboutMessage 中所指明的chunk stream id 的Chunk Stream 中的消息。注意这条命令只是撤销一个Chunk Stream 的数据，并不是整条Message Stream。实战中这个消息基本不会发送， 在rtmpdump 中也不会处理这个消息。
 
 3、 0x03 – Acknowledgement
-![image](http://mufool.qiniudn.com/rtmp/ack.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/ack.jpg)
 用来告知server，到目前为止已经收到了一定量的数据。0x05 消息指定了server 发送的窗口最大值，如果在发送的数据达到了最大值还没有收到客户端发来的报告，则server 会停止发送数据，经过实测fms 超过三倍这个窗口时会停止发送数据。因此客户端必须在收到数据未达到最大值前报告自己接收到的字节数。Sequence num 表示到目前为止客户端收到的字节数，但是要注意这个值会溢出，溢出后server不久便会停止发送数据，rtmpdump 就有这个问题。
 
 4、 0x04 – User Control Message
-![image](http://mufool.qiniudn.com/rtmp/ucm.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/ucm.jpg)
 这条消息是用户控制消息。主要是用来在Client 与Server 之间发送消息通知对方用户控制事件。这个消息的前2 个bytes 是指事件的类型，后面是事件的数据。根据Event Type 的不同，Event Data 的长度是不同的。
 * Type0，Stream Begin，服务器端通知客户端message stream 已经可以正常工作了。Event Data 是0，长度为4 个字节。这个事件是当服务器收到客户端的connect 命令后发送给客户端的。
 * Type1，Stream EOF，服务器端通知客户端播放已经结束了。Event Data 表示流ID，长度为4 个字节。
@@ -179,11 +179,11 @@ switch (nPacketType)
 * Type7，PingResponse，客户端反馈服务器端PingRequest 消息，Event Data 为ping消息中的时间戳，长度为4 个字节。Ping 消息必须回，否则一段时间后server 会停止服务。
 
 5、 0x05 – Window Acknowledgement Size
-![image](http://mufool.qiniudn.com/rtmp/waz.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/waz.jpg)
 这条消息也叫“Server Bandwidth”，主要是用于告知对方自己希望对方接收多少个字节之后回应一个Ack 确认消息。这个具体的字节数也叫做窗口大小。通常Server 会在成功处理Client 发出的connect 请求后发送这个Msg 更新Client 的Ack 窗口大小。
 
 6、 0x06 – Set Peer Bandwidth
-![image](http://mufool.qiniudn.com/rtmp/spb.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/spb.jpg)
 这条消息也叫“Client Bandwidth”，和Msg Type 0x05 相对应，这条消息是告诉对方要以怎样的带宽发送数据，带宽值应该与对方的Windows Size 相同。如果收到这条消息的一方发现自己的Windows Size 和这条消息中指定的Bandwidth 不同，应该回应一个Msg Type0x05。另外这条消息还有一个额外的字段Limit type，它的取值分别为：hard(0)、soft(1)、dynamic(2)。
 * Hard：对方的发送数据带宽必须严格符合指定带宽。
 * Soft：对方发送数据带宽可以自行决定。必要时接收方可以限制对方带宽。
@@ -197,37 +197,37 @@ switch (nPacketType)
 ### Connect
 Connect 命令是client 发送给server 的第一个命令，而此时chunk 大小还没有设定。因此client 采用默认值128 字节。
 Client 到Server 命令格式：
-![image](http://mufool.qiniudn.com/rtmp/connectc2s.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/connectc2s.jpg)
 其中Command object的取值包括:
-![image](http://mufool.qiniudn.com/rtmp/connectcmdobj.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/connectcmdobj.jpg)
 Server 到Client 命令格式:
-![image](http://mufool.qiniudn.com/rtmp/connects2c.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/connects2c.jpg)
 
 ### createStream
 Createstream 用于与服务器创建一条逻辑链路，传输音频、视频、元数据。
 Client 到Server 格式如下：
-![image](http://mufool.qiniudn.com/rtmp/createc2s.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/createc2s.jpg)
 Server 到Client 格式如下：
-![image](http://mufool.qiniudn.com/rtmp/creates2c.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/creates2c.jpg)
 
 ### Play
 开始播放一条stream，streamid为createstream返回的id。
 Client 到Server 格式如下：
-![image](http://mufool.qiniudn.com/rtmp/playc2s.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/playc2s.jpg)
 Server 到Client 格式如下:
-![image](http://mufool.qiniudn.com/rtmp/plays2c.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/plays2c.jpg)
 
 ## 客户端与服务器交互流程
 客户端与服务器之间的交互可以划分为三个过程:握手、设置参数、播放。
 
 ### 握手
-![image](http://mufool.qiniudn.com/rtmp/handshake.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/handshake.jpg)
 
 ### 设置参数
-![image](http://mufool.qiniudn.com/rtmp/setconf.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/setconf.jpg)
 
 ### 播放
-![image](http://mufool.qiniudn.com/rtmp/play.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/play.jpg)
 
 ### 从rtmpdump观察到的交互流程
 client ----------------------------------server
@@ -259,7 +259,7 @@ client ----------------------------------server
 
 ## 混合消息
 混合消息（Aggregate Message）是由多个消息组合而成的消息，Msg type 为0x16。之所以会存在这样的打包消息。是为了减少FMS 因为IO 过于频繁而导致CPU 开销过大的一种优化。
-![image](http://mufool.qiniudn.com/rtmp/aggregate.jpg)
+![image](http://pic-blog.bfvyun.com/rtmp/aggregate.jpg)
 混合消息中包含很多子消息，实战中发现子消息只有视频、音频、元信息三种。需要说明一点的是，子消息中的head 指的是flv 头而不是rtmp 头。如果非要解析这个数据包的话必须结合flv 头格式进行解析。还有注意一点，flv头中的时间戳都是绝对时间戳，和rtmp 流的时间戳不是一个体系的。如果要计算子消息的时间戳则要结合混合消息头消息中的时间戳。子消息的相对时间可以这样来计算：第一个子消息的时间戳与混合消息的时间戳相同，后续子消息用自己的绝对时间戳减去第一个子消息的绝对时间戳，然后再加上混合消息的时间戳即可。在Aggregate Message body 的打包消息列表中，Back Pointer 的内容是前一个Msg 的尺寸，包括Msg Header，这和FLV File Format 中的PreviousTagSize 非常相似。
 
 ## 加流控信息

@@ -14,7 +14,7 @@ Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理
 
 ## 安装配置
 
-下载kafka安装包，访问Kafka官网下载对应版本即可。([备用地址](http://mufool.qiniudn.com/hadoop/zookeeper-3.4.9.tar.gz))这里使用的版本为2.9.2-0.8.1.1。
+下载kafka安装包，访问Kafka官网下载对应版本即可。([备用地址](http://pic-blog.bfvyun.com/hadoop/zookeeper-3.4.9.tar.gz))这里使用的版本为2.9.2-0.8.1.1。
 
 ```bash
 tar -zxvf kafka_2.12-0.10.2.0.tgz

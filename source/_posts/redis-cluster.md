@@ -93,7 +93,7 @@ cd redis-cluster/7005
 
 4、查看进程
 
-![image](http://mufool.qiniudn.com/redis/redis-cluster0.jpg)
+![image](http://pic-blog.bfvyun.com/redis/redis-cluster0.jpg)
 
 
 ## 建立redis集群
@@ -107,7 +107,7 @@ cd redis-cluster/7005
 yum -y install ruby rubygems
 gem install redis --version 3.0.6
 ```
-![image](http://mufool.qiniudn.com/redis/redis-cluster1.jpg)
+![image](http://pic-blog.bfvyun.com/redis/redis-cluster1.jpg)
 
 ### 创建集群
 
@@ -115,7 +115,7 @@ gem install redis --version 3.0.6
 redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
 ```
 其中，命令create表示创建一个新的集群，选项–replicas 1表示未集群中的每个主节点创建一个从节点。即，上述命令运行后，redis-trib将创建一个包含三个主节点和三个从节点的集群。
-![image](http://mufool.qiniudn.com/redis/redis-cluster2.jpg) 
+![image](http://pic-blog.bfvyun.com/redis/redis-cluster2.jpg) 
 上面信息中 M 表示 Master 节点， S 表示 Slave 节点，同时可以看到主备关系。随后输入yes即可创建完成。
 
 ## 集群测试
@@ -123,7 +123,7 @@ redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 1
 ```
 ./src/redis-trib.rb check 127.0.0.1:7000
 ```
-![image](http://mufool.qiniudn.com/redis/redis-cluster3.jpg) 
+![image](http://pic-blog.bfvyun.com/redis/redis-cluster3.jpg) 
  其中可以看到每台master上的slot的分配个数，所有16384个slot都被covered，集群处于上线状态。
 
 
@@ -131,11 +131,11 @@ redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 1
 src/redis-cli -p 7000 cluster nodes
 ```
 
-![image](http://mufool.qiniudn.com/redis/redis-cluster4.jpg) 
+![image](http://pic-blog.bfvyun.com/redis/redis-cluster4.jpg) 
 
 查看集群中各节点的信息。包括唯一的节点ID，主从关系，每个主节点分配的slots范围。
 
-![image](http://mufool.qiniudn.com/redis/redis-cluster5.jpg) 
+![image](http://pic-blog.bfvyun.com/redis/redis-cluster5.jpg) 
 
 在任意节点上增删数据都可以在集群的其他节点看到。若节点上没有查询的数据，-c参数指定查询时接收到MOVED指令自动跳转。
 

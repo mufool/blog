@@ -17,20 +17,20 @@ tags: [P2P]
 &emsp;&emsp;NAT共分为两大类：Cone NAT和Symmetric NAT。Cone NAT指的是只要源IP端口不变，无论发往的目的IP是否相同，在NAT上都映射为同一个端口，形象的看来就像锥子一样，而SymmetricNAT对于发往不同目的IP的会话在NAT上将映射为不同的端口，也就是不同的会话。 其中Cone NAT又可细分为3类，分别是Full Cone型（全锥形）、Restricted Cone型（受限锥形）和Restricted Port Cone（端口受限锥形）。限制的严格程度和对局域网内主机的保护由松到紧依次为：Full Cone、RestrictedCone、Restricted Port Cone、Symmetric NAT。“限制”指的是NAT对由外到内的数据包进行审查、过滤，看看数据包的源地址和他发送到的“洞”是否有关系，如果没有那么就将其丢弃。由内向外的限制有防火墙管理。
 
 ### 全锥形NAT
-![fc](http://mufool.qiniudn.com/p2pnat/fc.jpg)
+![fc](http://pic-blog.bfvyun.com/p2pnat/fc.jpg)
 IP、端口都不受限。NAT设备会将客户端的{X, y}转换成公网地址的{A, b}并绑定对应关系，任何数据包通过地址{A,b}都将送到客户机的{X,y}上。
 
 ### 受限锥形NAT
- ![rc](http://mufool.qiniudn.com/p2pnat/rc.jpg)
+ ![rc](http://pic-blog.bfvyun.com/p2pnat/rc.jpg)
  
  IP受限，端口不受限。NAT设备会将客户端的{X, y}转换成公网地址的{A, b}并绑定对应关系，只有来自于{P}这个ip地址的包才能和主机{X, y}通信。
 
 ### 端口受限锥型NAT
-![pc](http://mufool.qiniudn.com/p2pnat/pc.jpg)
+![pc](http://pic-blog.bfvyun.com/p2pnat/pc.jpg)
 IP、端口都受限。NAT设备会将客户端的{X, y}转换成公网地址的{A, b}并绑定{X, y}，{A,b}和{P,q}的对应关系，NAT只会接受来自{P,q}的数据包，并将其转发到{X,y}。如果{X，y}改为向{M,n}发送数据，则{P,q}再向{A,b}发送的数据不会被接受。
 
 ### 对称型NAT
- ![sn](http://mufool.qiniudn.com/p2pnat/sn.jpg)
+ ![sn](http://pic-blog.bfvyun.com/p2pnat/sn.jpg)
 对称型NAT具有端口受限锥型的受限特性。但更重要的是，他对每个外部主机或端口的会话都会映射为不同的端口（洞）。NAT设备会将客户端的{X, y}转换成公网地址的{A, b}并绑定{X, y}，{A,b}和{P,q}的对应关系，NAT只会接受来自{P,q}的数据包，并将其转发到{X,y}，当请求一个新的地址{M,n}时，NAT设备会重新分配一个新的ip，端口{C,d}。
 
 ## NAT弊端

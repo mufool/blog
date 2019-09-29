@@ -16,31 +16,31 @@ FM算法，全称Factorization Machines,一般翻译为“因子分解机”。2
 
 传统线性回归基于以下模型，从模型方程易见，各特征分量xi和xj是相互独立。
 
-![image](http://mufool.qiniudn.com/fm/fm1.jpg)
+![image](http://pic-blog.bfvyun.com/fm/fm1.jpg)
 但是，一般线性模型无法学习到高阶组合特征，所以会将特征进行高阶组合，这里以二阶为例(理论上，FM可以组合任意高阶，但是由于计算复杂度，实际中常用二阶，后面也主要介绍二阶组合的内容)。模型形式为，
 
-![image](http://mufool.qiniudn.com/fm/fm2.jpg)
+![image](http://pic-blog.bfvyun.com/fm/fm2.jpg)
 
 相比于线性模型而言，二阶模型多了n(n−1)2参数。比如有(n=)1000个特征（连续变量离散化，并one-hot编码，特征很容易到达此量级），增加近50万个参数。
 
 FM使用近似矩阵分解。将参数量级减少成线性量级。可以将所有参数Wij组合成一个矩阵。
 
-![image](http://mufool.qiniudn.com/fm/fm3.jpg)
+![image](http://pic-blog.bfvyun.com/fm/fm3.jpg)
 
-![image](http://mufool.qiniudn.com/fm/fm4.jpg)
+![image](http://pic-blog.bfvyun.com/fm/fm4.jpg)
 很明显，实数矩阵W是对称的。所以，实对称矩阵W正定（至少半正定，这里假设正定）。根据矩阵的性质，正定矩阵可以分解。
 
 定理：当k足够大时，对于任意对称正定矩阵
-![image](http://mufool.qiniudn.com/fm/fm5.jpg)
+![image](http://pic-blog.bfvyun.com/fm/fm5.jpg)
 存在矩阵
 
-![image](http://mufool.qiniudn.com/fm/fm6.jpg)
+![image](http://pic-blog.bfvyun.com/fm/fm6.jpg)
 
 使得
-![image](http://mufool.qiniudn.com/fm/fm7.jpg)
+![image](http://pic-blog.bfvyun.com/fm/fm7.jpg)
 
 带入后，模型如下
-![image](http://mufool.qiniudn.com/fm/fm8.jpg)
+![image](http://pic-blog.bfvyun.com/fm/fm8.jpg)
 
 
 问题从求解矩阵W变成了求解矩阵V

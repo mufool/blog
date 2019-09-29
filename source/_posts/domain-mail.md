@@ -18,10 +18,10 @@ MX是邮件交换记录，它指向一个邮件服务器，用于电子邮件系
 ## 一级域名邮箱设置
 
 以下是在DNSPOD上，添加主域名（mail.mydomain.com）的邮箱记录，将其指定到自定义的邮件服务器上（对应A记录的ip地址）
-![domain-mail-1](http://mufool.qiniudn.com/domain/domain-mail-1.jpg)
+![domain-mail-1](http://pic-blog.bfvyun.com/domain/domain-mail-1.jpg)
 
 ## 二级域名邮箱设置
 
 已有一级邮箱域名服务（mail.mydomain.com），现添加二级域名（mail.mails.mydomian.com）的邮件服务，将其cname到阿里云的邮件服务器上。
-![domain-mail-2](http://mufool.qiniudn.com/domain/domain-mail-2.jpg)
+![domain-mail-2](http://pic-blog.bfvyun.com/domain/domain-mail-2.jpg)
 

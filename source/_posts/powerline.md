@@ -35,7 +35,7 @@ mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 ## 在Bash中启用Powerline
 
 查看powerline安装位置
-![image](http://mufool.qiniudn.com/powerline/powerline1.jpg)
+![image](http://pic-blog.bfvyun.com/powerline/powerline1.jpg)
 
 可以看到安装位置在`/usr/lib/python2.6/site-packages`下
 
@@ -52,7 +52,7 @@ POWERLINE_BASH_SELECT=1
 
 重启终端即可看到效果。
 
-![image](http://mufool.qiniudn.com/powerline/powerlinel4.jpg)
+![image](http://pic-blog.bfvyun.com/powerline/powerlinel4.jpg)
 
 ## 在vim中启用powerline
 
@@ -63,7 +63,7 @@ set rtp+=/usr/lib/python2.6/dist-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 ```
-![image](http://mufool.qiniudn.com/powerline/powerline2.jpg)
+![image](http://pic-blog.bfvyun.com/powerline/powerline2.jpg)
 
 ## 在zsh中启用powerline
 

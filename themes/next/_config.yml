@@ -252,7 +252,7 @@ post_wordcount:
 
 # Wechat Subscriber
 wechat_subscriber:
-  enabled: true
+  enabled: false
   qcode: /images/weixin.jpg
   description: 微信打赏
 

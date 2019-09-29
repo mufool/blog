@@ -23,14 +23,14 @@ PuTTY不提供“记住密码”一类的选项，PuTTY自动登录Linux系统�
 
 使用PuTTY安装目录里的puttygen.exe工具。先点“生成(Generate)”，然后随意移动鼠标直到进度条填满，即可生成密钥。
 
-![image](http://mufool.qiniudn.com/putty/putty1.jpg)
+![image](http://pic-blog.bfvyun.com/putty/putty1.jpg)
 
 点击`Save private key`保存私钥到文件。
 
 ### Putty关联私钥
 
 在Connection -> SSH -> Auth, Private keyfile for authentication中添加上一步生成的私钥文件，同时保存会话。
-![image](http://mufool.qiniudn.com/putty/putty2.jpg)
+![image](http://pic-blog.bfvyun.com/putty/putty2.jpg)
 
 ### 服务器添加公钥
 

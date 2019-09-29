@@ -59,7 +59,7 @@ lost server
 重新安装解决
 
 完成进入tmux进入软件，界面类似一个下方带有状态栏的终端。
-![image](http://mufool.qiniudn.com/tmux/tmux1.jpg)
+![image](http://pic-blog.bfvyun.com/tmux/tmux1.jpg)
 
 ## 基本概念
 
@@ -69,7 +69,7 @@ Tmux基于典型的c/s模型，主要分为会话、窗口和面板三个元素�
 * Window：会话中一个可见的窗口。
 * Pane:一个窗口可以分成多个面板。
 
-![image](http://mufool.qiniudn.com/tmux/tmux2.jpg)
+![image](http://pic-blog.bfvyun.com/tmux/tmux2.jpg)
 注：图片来自网络
 图中左下角的3显示为当前会话，随后1 vim,2 bash,3 ssh 分别是3个窗口，蓝色bash表示当前窗口，图中用蓝色数字标记的1,2,3分别是bash窗口的三个面板。你还可以在tmux配置文件中给状态栏添加时间、天气等信息。
 
@@ -271,7 +271,7 @@ set -g pane-border-fg '#555555'
 ```
 
 256颜色表
-![image](http://mufool.qiniudn.com/tmux/tmux3.jpg)
+![image](http://pic-blog.bfvyun.com/tmux/tmux3.jpg)
 注：图片来自网络
 
 ### 插件配置状态栏
