@@ -45,9 +45,10 @@ comments: false
 * [Redis安装配置](http://mufool.com/2017/06/16/redis-install)
 * [Centos安装redis集群](http://mufool.com/2017/10/17/redis-cluster)
 
-## 插件
+## 效率工具
 
-[Vimium使用](http://mufool.com/2019/09/29/chrome-plugin-vimium/)
+* [Vimium使用](http://mufool.com/2019/09/29/chrome-plugin-vimium/)
+* [Chrome快捷键](http://mufool.com/2019/10/08/chrome-shortcut/)
 
 ## 系统管理
 
@@ -110,6 +111,7 @@ comments: false
 
 * [Centos升级python2.7](http://mufool.com/2017/11/16/python-update-2-7/)
 * [Python使用国内源下载](http://mufool.com/2017/11/16/python-mirrors/)
+* [极简Python代码](http://mufool.com/2019/10/08/python-mini/)
 
 ## 数据结构和算法
 
